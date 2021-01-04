@@ -1,6 +1,6 @@
 # Site Capture
 
-Aplication for automatic creating screenshots of defined sites. Apliaction supporting templates for shared definitions of quality, viewports etc...
+Application for automatically creating screenshots of defined sites. Application supporting templates for shared definitions of quality, viewports, etc...
 
 ## Application Parts
 
