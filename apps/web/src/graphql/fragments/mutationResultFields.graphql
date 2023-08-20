@@ -1,0 +1,3 @@
+fragment mutationResultFields on MutationResult  {
+  status
+}

@@ -1,0 +1,44 @@
+type ProgressItem {
+  url: String!
+  status: Boolean!
+  errorMessage: String
+}
+
+type Job {
+  id: ID!
+  progress: Float!
+  items: [ProgressItem!]!
+  status: Boolean!
+  errorMessage: String
+  zipFileId: String
+}
+
+type JobUpdated {
+  id: ID!
+  progress: Float!
+  status: Boolean!
+  item: ProgressItem
+  errorMessage: String
+  zipFileId: String
+}
+
+input NewJobInput {
+  url: String!
+  viewports: [ViewportInput!]!
+  quality: Int!
+}
+
+type Query {
+  # Gets an anonymous job created through 'Mutation { runAnonymousJob }'.
+  anonymousJob(id: ID!): Job
+}
+
+type Mutation {
+  # Runs new job using provided data.
+  runAnonymousJob(job: NewJobInput): MutationIdResult
+}
+
+type Subscription {
+  # Subscribes for updates about job.
+  jobUpdated(id: ID!): JobUpdated!
+}

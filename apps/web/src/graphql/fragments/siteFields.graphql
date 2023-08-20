@@ -1,0 +1,11 @@
+fragment siteFields on Site {
+  id
+  name
+  url
+  quality
+  subsites
+  latestJobId
+  viewports {
+  ...viewportFields
+  }
+}

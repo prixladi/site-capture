@@ -1,0 +1,4 @@
+fragment mutationIdResultFields on MutationIdResult  {
+  status
+  id
+}

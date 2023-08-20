@@ -1,0 +1,8 @@
+fragment templateFields on Template {
+  id
+  name
+  quality
+  viewports {
+  ...viewportFields
+  }
+}

@@ -1,0 +1,5 @@
+subscription jobUpdated($id: ID!) {
+    jobUpdated(id: $id) {
+       ...jobUpdatedFields
+    }
+}

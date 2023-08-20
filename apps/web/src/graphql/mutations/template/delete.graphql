@@ -1,0 +1,7 @@
+mutation deleteTemplate($id: ID!) {
+  template {
+    delete(id: $id) {
+      ...templateFields
+    }
+  }
+}

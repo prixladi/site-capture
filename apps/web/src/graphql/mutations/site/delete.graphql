@@ -1,0 +1,7 @@
+mutation deleteSite($id: ID!) {
+  site {
+    delete(id: $id) {
+      ...siteFields
+    }
+  }
+}

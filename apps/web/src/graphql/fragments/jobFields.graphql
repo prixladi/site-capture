@@ -1,0 +1,10 @@
+fragment jobFields on Job  {
+  id
+  progress
+  status
+  zipFileId
+  errorMessage
+  items {
+      ...progressItemFields
+  }
+}

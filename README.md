@@ -1,20 +1,19 @@
 # Site Capture
 
-Application for capturing screenshots of defined sites using predefined parameters. Application supporting templates for shared definitions of quality, viewports, etc...
+Application for capturing screenshots of defined sites using predefined parameters. Application supports templates for shared definitions of quality, viewports, etc...
 
-## Application Parts
+## Applications
 
-The frontend can be found in [Site Capture Next](https://github.com/prixladi/site-capture-next) repository.<br />
-The backend can be found in [Site Capture Server](https://github.com/prixladi/site-capture-server) repository.<br />
-The worker can be found in [Site Capture Puppet](https://github.com/prixladi/site-capture-puppet) repository.<br />
-Application is using [Shamyr Authority](https://github.com/prixladi/shamyr-cloud-authority) as an identity provider.
+- [Frontend](/apps/web) - next.js web application and administration communicating with backend
+- [Backend](/apps/server) - nodejs backend server storing data to mongo and sending events through redis to the puppet
+- [Puppet](/apps/puppet) - nodejs worker using puppeteer processing work requests send by backend through redis
 
-## Docker
+## External
 
-### `docker-compose up`
+- [Authority](https://github.com/prixladi/shamyr-cloud-authority) - identity provider
+- [MongoDB](https://www.mongodb.com/) - main database
+- [Redis](https://redis.io/) - cache and event emitter
 
-Runs production-ready containers with the configuration specified in [/docker-compose.yml](docker-compose.yml).
-
-## Images from app
+## Application images
 
 ![index](assets/index.png)

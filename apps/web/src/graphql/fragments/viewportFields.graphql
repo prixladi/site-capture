@@ -1,0 +1,4 @@
+fragment viewportFields on Viewport {
+  width
+  height
+}

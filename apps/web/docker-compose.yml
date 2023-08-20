@@ -65,7 +65,7 @@ services:
       USE_SANDBOX: "false"
 
   next:
-    image: shamyr/site-capture-next
+    image: shamyr/site-capture/next
     ports: 
       - 3000:3000 
     environment:
@@ -73,7 +73,10 @@ services:
       GRAPHQL_WS_URL: ws://localhost:8000/ws
       AUTH_API_URL: http://localhost:8080/api/v1
       AUTH_API_CLIENT_ID: 5f881d54384e9c6ee9a9ca33
-      GOOGLE_CLIENT_ID: 97602093997-ap7hb32vp8dpums0k8u7ou6tmlppfml9.apps.googleusercontent.com     
+      GOOGLE_CLIENT_ID: 97602093997-ap7hb32vp8dpums0k8u7ou6tmlppfml9.apps.googleusercontent.com
+    build:
+      context: .
+      dockerfile: ./Dockerfile       
 
 volumes:
   mongodata:

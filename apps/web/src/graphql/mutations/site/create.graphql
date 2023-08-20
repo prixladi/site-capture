@@ -1,0 +1,7 @@
+mutation createSite($site: NewSiteInput!) {
+  site {
+    create(site: $site) {
+      ...siteFields
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "site-capture-server",
+  "version": "1.0.0",
+  "description": "Backend for Site Capture project.",
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc",
+    "postbuild": "copyfiles -u 1 src/**/*.graphql src/**/*.gql dist/",
+    "start": "node ./dist/index.js",
+    "eslint:check": "eslint -c .eslintrc.json src/**/*.{js,ts}",
+    "eslint:fix": "eslint -c .eslintrc.json --fix  src/**/*.{js,ts}",
+    "format:check": "prettier -l \"**/*.{js,ts}\"",
+    "format:fix": "prettier --write \"**/*.{js,ts}\"",
+    "code:check": "yarn eslint:check && yarn format:check",
+    "code:fix": "yarn eslint:fix && yarn format:fix"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.19.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.4.0",
+    "graphql-middleware": "^6.0.0",
+    "graphql-redis-subscriptions": "^2.3.1",
+    "graphql-shield": "^7.4.4",
+    "graphql-tools": "^7.0.2",
+    "ioredis": "^4.19.4",
+    "joi": "^17.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "merge-graphql-schemas": "^1.7.8",
+    "mongoose": "^5.11.8"
+  },
+  "devDependencies": {
+    "@types/ioredis": "^4.17.10",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/node": "^14.14.14",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^7.15.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}

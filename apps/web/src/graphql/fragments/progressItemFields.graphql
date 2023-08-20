@@ -1,0 +1,5 @@
+fragment progressItemFields on ProgressItem  {
+  url
+  status
+  errorMessage
+}

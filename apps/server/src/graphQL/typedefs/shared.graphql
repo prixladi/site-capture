@@ -1,0 +1,30 @@
+enum MutationStatus {
+  OK
+  NOT_FOUND
+  CONFLICT
+}
+
+type MutationResult {
+  status: MutationStatus!
+}
+
+type MutationIdResult {
+  id: ID
+  status: MutationStatus!
+}
+
+type Viewport {
+  width: Int!
+  height: Int!
+}
+
+input ViewportInput {
+  width: Int!
+  height: Int!
+}
+
+input PaginationInput {
+  skip: Int!
+  limit: Int!
+}
+

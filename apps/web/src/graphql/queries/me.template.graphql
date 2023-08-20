@@ -1,0 +1,8 @@
+query template($id: ID!) {
+  me {
+    id
+    template(id: $id) {
+        ...templateFields
+    }
+  }
+}

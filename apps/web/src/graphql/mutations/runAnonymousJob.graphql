@@ -1,0 +1,5 @@
+mutation runAnonymousJob($job: NewJobInput!) {
+  runAnonymousJob(job: $job) {
+    ...mutationIdResultFields
+  }
+}

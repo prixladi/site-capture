@@ -1,0 +1,8 @@
+query site($id: ID!) {
+  me {
+    id
+    site(id: $id) {
+        ...siteFields
+    }
+  }
+}

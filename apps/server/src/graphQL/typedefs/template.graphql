@@ -1,0 +1,35 @@
+type Template {
+  id: ID!
+  name: String!
+  viewports: [Viewport!]!
+  quality: Int!
+  userId: String!
+}
+
+input NewTemplateInput {
+  name: String! 
+  viewports: [ViewportInput!]!
+  quality: Int!
+}
+
+input UpdateTemplateInput {
+  name: String
+  url: String
+  viewports: [ViewportInput!]
+  quality: Int
+  isPublic: Boolean
+}
+
+type TemplateMutation  {
+  # Creates new template and returns result.
+  create(template: NewTemplateInput): Template!
+  # Updates site and returns result.
+  update(id: ID, update: UpdateTemplateInput): Template! 
+  # Deletes site and returns result.
+  delete(id: ID): Template!
+}
+
+type Mutation {
+  # Template mutation node 
+  template: TemplateMutation!
+}

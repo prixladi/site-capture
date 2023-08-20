@@ -1,0 +1,45 @@
+type Site {
+  id: ID!
+  name: String!
+  url: String!
+  subsites: [String!]!
+  viewports: [Viewport!]!
+  quality: Int!
+  userId: String!
+  latestJobId: String
+}
+
+input NewSiteInput {
+  name: String!
+  url: String!
+  subsites: [String!]!
+  viewports: [ViewportInput!]!
+  quality: Int!
+}
+
+input UpdateSiteInput {
+  name: String
+  url: String
+  subsites: [String!]
+  viewports: [ViewportInput!]
+  quality: Int
+}
+
+type SiteMutation  {
+  # Creates new site and returns result.
+  create(site: NewSiteInput): Site!
+  # Updates site and returns result.
+  update(id: ID, update: UpdateSiteInput): Site! 
+  # Deletes site and returns result.
+  delete(id: ID): Site!
+  # Runs job using data from existing site. 
+  runJob(
+     # ID of site.
+     id: ID
+     ): MutationIdResult!
+}
+
+type Mutation {
+  # Site mutation node
+  site: SiteMutation!
+}

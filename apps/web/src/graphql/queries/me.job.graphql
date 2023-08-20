@@ -1,0 +1,8 @@
+query job($id: ID!) {
+  me {
+    id
+    job(id: $id) {
+        ...jobFields
+    }
+  }
+}
